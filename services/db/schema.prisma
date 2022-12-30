@@ -37,7 +37,7 @@ model Room {
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
-  admin   User   @relation("AdminRooms", fields: [adminId], references: [id])
+  admin   User   @relation("AdminRooms", fields: [adminId], references: [id], onUpdate: Cascade, onDelete: Cascade)
   adminId String @map("admin_id") @db.Uuid
 
   @@map("rooms")

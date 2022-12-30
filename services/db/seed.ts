@@ -9,13 +9,13 @@ async function main() {
       {
         name: 'Participant 0',
         email: 'participant0@email.com',
-        passwordHash: (await argon2.hash('password123@')).toString(),
+        passwordHash: (await argon2.hash('Password123@')).toString(),
         role: UserRole.PARTICIPANT,
       },
       {
         name: 'Admin 0',
         email: 'admin0@email.com',
-        passwordHash: (await argon2.hash('password123@')).toString(),
+        passwordHash: (await argon2.hash('Password123@')).toString(),
         role: UserRole.ADMIN,
       },
     ],
