@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: db
+    deploy:
+      restart_policy:
+        condition: on-failure
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - invigilate_db:/var/lib/postgresql/data
+    ports:
+      - 9001:5432
+    networks:
+      - invigilate
+
+networks:
+  invigilate:
+    driver: bridge
+
+volumes:
+  invigilate_db:
