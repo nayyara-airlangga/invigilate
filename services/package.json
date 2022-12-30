@@ -69,7 +69,7 @@
   },
   "prisma": {
     "schema": "db/schema.prisma",
-    "seed": "ts-node db/seed.ts"
+    "seed": "pnpx ts-node db/seed.ts"
   },
   "jest": {
     "moduleFileExtensions": [
